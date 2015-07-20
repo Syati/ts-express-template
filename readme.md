@@ -5,7 +5,21 @@ $ npm install
 $ npm start
 ```
 
-# Remove compiled source
+# Development
+
+## Server start
+
+```
+$ npm start
+```
+
+## Watch source
+
+```
+$ grunt
+```
+
+## Remove compiled source
 
 ```
 $ npm run-script clean

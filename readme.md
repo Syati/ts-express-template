@@ -1,8 +1,12 @@
 # Getting started
 
-npm install
-npm start
+```
+$ npm install
+$ npm start
+```
 
 # Remove compiled source
 
-npm run-script clean
+```
+$ npm run-script clean
+```

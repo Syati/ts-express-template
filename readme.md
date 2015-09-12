@@ -24,3 +24,16 @@ $ grunt
 ```
 $ npm run-script clean
 ```
+
+
+
+
+docs/
+app/
+ grunt/
+ typings/
+ server/
+   1/
+   2/
+   app.ts
+ pacakge.json

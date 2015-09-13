@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "grunt",
-    "clean": "find ./app/server -name '*.d.ts' -or -name '*.js' -type f | xargs rm",
+    "clean": "find -E . -regex '.*/server/.+\\.js$' -type f | xargs rm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -27,7 +27,7 @@
     "grunt-newer": "^1.1.1",
     "grunt-nodemon": "^0.4.0",
     "grunt-rsync": "~0.6.2",
-    "grunt-styleguide": "~0.2.17",
+    "grunt-styledocco": "^0.2.1",
     "grunt-tsd": "^0.1.0",
     "grunt-typescript": "^0.6.2",
     "jade": "~1.6.0",

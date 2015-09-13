@@ -5,18 +5,18 @@ module.exports = {
     livereload: true
   },
   typescript: {
-    files: [path.join('<%= settings.getServerRootDir() %>', '**/*.ts')],
+    files: [path.join('<%= settings.SERVER_ROOT %>', '**/*.ts')],
     tasks: ['newer:typescript:default']
   },
   rsync: {
-    files: [path.join('<%= settings.getAssetsDir() %>', 'images/**/*')],
+    files: [path.join('<%= settings.ASSETS_ROOT %>', 'images/**/*')],
     tasks: ['rsync:default']
   },
   // for livereload
   less: {
-    files: [path.join('<%= settings.getAssetsDir() %>', 'stylesheets/**/*.less')]
+    files: [path.join('<%= settings.ASSETS_ROOT %>', 'stylesheets/**/*.less')]
   },
   jade: {
-    files: [path.join('<%= settings.getViewsDir() %>', '**/*.jade')]
+    files: [path.join('<%= settings.VIEWS_ROOT %>', '**/*.jade')]
   }
 };

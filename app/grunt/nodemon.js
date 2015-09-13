@@ -1,6 +1,17 @@
 module.exports = {
   default: {
-    script: '<%= settings.App %>'
+    script: '<%= settings.App %>',
+    options: {
+      callback: function(nodemon) {
+        // refreshes browser when server reboots
+        nodemon.on('restart', function () {
+          // Delay before server listens on port
+          setTimeout(function() {
+            require('fs').writeFileSync('.rebooted', 'rebooted');
+          }, 1000);
+        });
+      }
+    }
   }
 };
 

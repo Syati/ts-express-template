@@ -1,6 +1,6 @@
 module.exports = {
   default: {
-    script: '<%= settings.App %>',
+    script: '<%= settings.APP %>',
     options: {
       callback: function(nodemon) {
         // refreshes browser when server reboots
@@ -14,4 +14,3 @@ module.exports = {
     }
   }
 };
-

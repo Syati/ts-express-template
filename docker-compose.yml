@@ -6,7 +6,7 @@ web:
     - ./server:/app/server
     - ./grunt:/app/grunt
     - ./Gruntfile.js:/app/Gruntfile.js
-    - ./bower.js:/app/bower.js
+    - ./bower.json:/app/bower.json
     - ./package.json:/app/package.json
     - ./tsd.json:/app/tsd.json
   ports:

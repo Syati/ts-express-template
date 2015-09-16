@@ -1,19 +1,16 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-
+/// <reference path="../../typings/tsd.d.ts" />
 // Third party
-import express = require('express');
-import path = require('path');
+var express = require('express');
+var path = require('path');
 //import favicon = require('serve-favicon');
-import logger = require('morgan');
-import cookieParser = require('cookie-parser');
-import bodyParser = require('body-parser');
-import methodOverride = require('method-override');
-import lessMiddleware = require('less-middleware');
-
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var lessMiddleware = require('less-middleware');
 // Local
-import settings = require('./settings/index');
-import utilError = require('../utils/error/index');
-
+var settings = require('./settings/index');
+var utilError = require('../utils/error/index');
 function config(app) {
     // view engine setup
     app.set('views', path.join(settings.root, 'views'));
@@ -25,24 +22,19 @@ function config(app) {
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(methodOverride('_method'));
     app.use(cookieParser());
-
     app.use(lessMiddleware(path.join(settings.root, 'assets'), {
         dest: path.join(settings.root, 'public')
     }));
     app.use(express.static(path.join(settings.root, 'public')));
-
     // route
     require('./routes')(app);
-
     // catch 404 and forward to error handler
     app.use(utilError.error404);
-
-    switch(settings.env){
-    case "production":
-        app.use(utilError.prodErrorHandler);
-    case "development":
-        app.use(utilError.devErrorHandler);
+    switch (settings.env) {
+        case "production":
+            app.use(utilError.prodErrorHandler);
+        case "development":
+            app.use(utilError.devErrorHandler);
     }
 }
-
-export = config
+module.exports = config;

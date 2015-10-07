@@ -1,5 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
 // Third party
 import express = require('express');
 import path = require('path');

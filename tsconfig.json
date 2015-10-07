@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "declaration": false,
+        "outDir": "",
+        "target": "ES5",
+        "module": "commonjs",
+        "noEmitOnError": true
+    },
+    "files": [
+        "typings/tsd.d.ts",
+        "server/app.ts",
+        "server/config/express.ts",
+        "server/config/routes.ts",
+        "server/config/settings/development.ts",
+        "server/config/settings/index.ts",
+        "server/config/settings/localhost.ts",
+        "server/config/settings/production.ts",
+        "server/homes/controller.ts",
+        "server/homes/index.ts",
+        "server/utils/error/index.ts"
+    ]
+}
